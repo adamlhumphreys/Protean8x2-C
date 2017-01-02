@@ -7,7 +7,7 @@ This is not a library, but the main code that runs on the Protean 8x2 to perform
 ## Version – 1.1
 
 ## Suggested Boards
-- Protean 8x2 V1+ (using the ATmega328P) https://www.kickstarter.com/projects/939637926/1475517171?token=f2811508
+- Protean 8x2 V1+ (using the ATmega328P) [Kickstarter Preview] (https://www.kickstarter.com/projects/939637926/1475517171?token=f2811508)
 
 ## Intended MCUs
 - ATmega328P/B
