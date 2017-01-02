@@ -1,0 +1,55 @@
+How data bytes 2 and 3 correspond to pins: 
+BITS:    15 14 13 12 11 10 09 08   07 06 05 04 03 02 01 00
+PINS:    D7 D6 C5 C4 C3 C2 C1 C0   D5 D4 B5 B4 B3 B2 B1 B0
+Arduino:  7  6 A5 A4 A3 A2 A1 A0    5  4 13 12 11 10  9  8
+
+
+Output command: <[7:0][7:0][7:0]>
+Byte 0: '<'
+Byte 1: Address [7:0]
+Byte 2: Outputs 15-8 [7:0]
+Byte 3: Outputs 7-0 [7:0]
+Byte 4: Command [7:6] | '>' [5:0]
+
+Byte 4 Commands [7:6]:
+00 - Set ('>')
+01 - Pop ('~')
+10 - Invert ('¾')
+11 - Read ('þ')
+
+
+Setup commands: ([7:0][7:0][7:0])
+Byte 0: '('
+Byte 1: Address [7:0]
+Byte 2: Bits 15-8 [7:0]; 0 = input and 1 = output when Byte 4, bit 7 is 0; 0 = active high, 1 = pullup/active low when Byte 4, bit 7 is 1;
+Byte 3: Bits 7-0 [7:0]
+Byte 4: Command [7:6] | ')' [5:0]
+
+Byte 4 Commands [7]:
+0 - Configure I/Os
+1 - Configure input pullups ('©')
+Byte 4 Commands [6]:
+0 - Only send input as a one time event/press
+1 - Send input as a state change ('i')
+
+Bit 7 and 6 set is 'é'
+
+
+Matrix commands: <[7:0][7:0]>[null byte]
+Byte 0: '<'
+Byte 1: Address [7:0]
+Byte 2: Command or ASCII Character to output [7:0]
+Byte 3: '>'
+Byte 4: null
+
+Byte 2 Commands:
+Printable ASCII character - Enter matrix mode. NOTE: All channels must be configured as outputs before entering matrix mode.
+'\n' or Line Feed - Exit matrix mode.
+
+
+Input data when transmitted: {[7:0][7:0][7:0]}
+Byte 0: '{'
+Byte 1: Address [7:0]
+Byte 2: Inputs 15-8 [7:0]
+Byte 3: Inputs 7-0 [7:0]
+Byte 4: '}'

@@ -1,0 +1,796 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FileType>YAT Terminal Settings</FileType>
+  <SettingsVersion>1.5.0</SettingsVersion>
+  <ProductVersion>1.99.52</ProductVersion>
+  <Warning>Modifying this file may cause undefined behavior!</Warning>
+  <Saved>
+    <TimeStamp>2016-12-10T02:21:51.4432638-06:00</TimeStamp>
+    <UserName>Owner</UserName>
+  </Saved>
+  <AutoSaved>false</AutoSaved>
+  <Explicit>
+    <TerminalIsStarted>true</TerminalIsStarted>
+    <LogIsOn>false</LogIsOn>
+    <UserName>Protean 8x2</UserName>
+    <Terminal>
+      <TerminalType>Text</TerminalType>
+      <IO>
+        <IOType>SerialPort</IOType>
+        <SerialPort>
+          <PortId>
+            <Name>COM10</Name>
+          </PortId>
+          <Communication>
+            <BaudRate>2000000</BaudRate>
+            <DataBits>Eight</DataBits>
+            <Parity>None</Parity>
+            <StopBits>One</StopBits>
+            <FlowControl>None</FlowControl>
+            <RfrPin>Disabled</RfrPin>
+            <DtrPin>Disabled</DtrPin>
+          </Communication>
+          <AliveMonitor>
+            <Enabled>true</Enabled>
+            <Interval>500</Interval>
+          </AliveMonitor>
+          <AutoReopen>
+            <Enabled>true</Enabled>
+            <Interval>2000</Interval>
+          </AutoReopen>
+          <OutputBufferSize>
+            <Enabled>false</Enabled>
+            <Size>2048</Size>
+          </OutputBufferSize>
+          <OutputMaxBaudRate>true</OutputMaxBaudRate>
+          <MaxChunkSize>
+            <Enabled>true</Enabled>
+            <Size>48</Size>
+          </MaxChunkSize>
+          <MaxSendRate>
+            <Enabled>false</Enabled>
+            <Size>48</Size>
+            <Interval>10</Interval>
+          </MaxSendRate>
+          <NoSendOnOutputBreak>true</NoSendOnOutputBreak>
+          <NoSendOnInputBreak>false</NoSendOnInputBreak>
+        </SerialPort>
+        <Socket>
+          <Type>TcpAutoSocket</Type>
+          <RemoteHost>[Localhost]</RemoteHost>
+          <RemoteTcpPort>10000</RemoteTcpPort>
+          <RemoteUdpPort>10000</RemoteUdpPort>
+          <LocalInterface>
+            <Description>[Any]</Description>
+            <Address>0.0.0.0</Address>
+          </LocalInterface>
+          <LocalFilter>[Any]</LocalFilter>
+          <LocalTcpPort>10000</LocalTcpPort>
+          <LocalUdpPort>10001</LocalUdpPort>
+          <TcpClientAutoReconnect>
+            <Enabled>false</Enabled>
+            <Interval>500</Interval>
+          </TcpClientAutoReconnect>
+          <UdpServerSendMode>MostRecent</UdpServerSendMode>
+        </Socket>
+        <UsbSerialHidDevice>
+          <DeviceInfo>
+            <VendorId>0</VendorId>
+            <ProductId>0</ProductId>
+            <SerialNumber />
+          </DeviceInfo>
+          <MatchSerial>true</MatchSerial>
+          <ReportFormat>
+            <UseId>true</UseId>
+            <Id>0</Id>
+            <PrependPayloadByteLength>false</PrependPayloadByteLength>
+            <AppendTerminatingZero>false</AppendTerminatingZero>
+            <FillLastReport>true</FillLastReport>
+          </ReportFormat>
+          <RxIdUsage>
+            <SeparateRxId>false</SeparateRxId>
+            <AnyRxId>false</AnyRxId>
+            <RxId>0</RxId>
+          </RxIdUsage>
+          <FlowControl>None</FlowControl>
+          <AutoOpen>true</AutoOpen>
+        </UsbSerialHidDevice>
+        <Endianness>BigEndian</Endianness>
+        <IndicateSerialPortBreakStates>false</IndicateSerialPortBreakStates>
+        <SerialPortOutputBreakIsModifiable>false</SerialPortOutputBreakIsModifiable>
+      </IO>
+      <Status>
+        <ShowConnectTime>false</ShowConnectTime>
+        <ShowCountAndRate>false</ShowCountAndRate>
+        <ShowFlowControlCount>false</ShowFlowControlCount>
+        <ShowBreakCount>false</ShowBreakCount>
+      </Status>
+      <Buffer>
+        <TxBufferSize>65536</TxBufferSize>
+        <RxBufferSize>65536</RxBufferSize>
+      </Buffer>
+      <Display>
+        <SeparateTxRxRadix>false</SeparateTxRxRadix>
+        <TxRadix>String</TxRadix>
+        <RxRadix>String</RxRadix>
+        <ShowRadix>true</ShowRadix>
+        <ShowBufferLineNumbers>false</ShowBufferLineNumbers>
+        <ShowTotalLineNumbers>false</ShowTotalLineNumbers>
+        <ShowDate>false</ShowDate>
+        <ShowTime>false</ShowTime>
+        <ShowPort>false</ShowPort>
+        <ShowDirection>true</ShowDirection>
+        <ShowLength>false</ShowLength>
+        <MaxLineCount>1000</MaxLineCount>
+        <MaxBytePerLineCount>1000</MaxBytePerLineCount>
+        <PortLineBreakEnabled>true</PortLineBreakEnabled>
+        <DirectionLineBreakEnabled>true</DirectionLineBreakEnabled>
+        <InfoSeparator> </InfoSeparator>
+        <InfoEnclosure>()</InfoEnclosure>
+      </Display>
+      <CharReplace>
+        <ReplaceControlChars>true</ReplaceControlChars>
+        <ControlCharRadix>AsciiMnemonic</ControlCharRadix>
+        <ReplaceTab>false</ReplaceTab>
+        <ReplaceSpace>false</ReplaceSpace>
+      </CharReplace>
+      <CharHide>
+        <HideXOnXOff>false</HideXOnXOff>
+        <Hide0x00>false</Hide0x00>
+        <Hide0xFF>false</Hide0xFF>
+      </CharHide>
+      <Send>
+        <UseExplicitDefaultRadix>false</UseExplicitDefaultRadix>
+        <KeepCommand>true</KeepCommand>
+        <CopyPredefined>false</CopyPredefined>
+        <SendImmediately>false</SendImmediately>
+        <DefaultDelay>500</DefaultDelay>
+        <DefaultLineDelay>100</DefaultLineDelay>
+        <DefaultLineInterval>100</DefaultLineInterval>
+        <DefaultLineRepeat>-1</DefaultLineRepeat>
+        <DisableKeywords>false</DisableKeywords>
+        <SignalXOnBeforeEachTransmission>false</SignalXOnBeforeEachTransmission>
+        <SignalXOnPeriodically>
+          <Enabled>false</Enabled>
+          <Interval>1000</Interval>
+        </SignalXOnPeriodically>
+      </Send>
+      <TextTerminal>
+        <SeparateTxRxEol>true</SeparateTxRxEol>
+        <TxEol>&lt;CR&gt;&lt;LF&gt;</TxEol>
+        <RxEol>&lt;LF&gt;</RxEol>
+        <Encoding>1252</Encoding>
+        <ShowEol>false</ShowEol>
+        <LineSendDelay>
+          <Enabled>true</Enabled>
+          <Delay>22</Delay>
+          <LineInterval>1</LineInterval>
+        </LineSendDelay>
+        <WaitForResponse>
+          <Enabled>false</Enabled>
+          <Timeout>500</Timeout>
+        </WaitForResponse>
+        <CharSubstitution>None</CharSubstitution>
+        <EolComment>
+          <SkipComment>false</SkipComment>
+          <SkipWhiteSpace>true</SkipWhiteSpace>
+          <Indicators>//</Indicators>
+          <Indicators>REM</Indicators>
+        </EolComment>
+      </TextTerminal>
+      <BinaryTerminal>
+        <SeparateTxRxDisplay>false</SeparateTxRxDisplay>
+        <TxDisplay>
+          <LengthLineBreak>
+            <Enabled>true</Enabled>
+            <Length>16</Length>
+          </LengthLineBreak>
+          <SequenceLineBreakBefore>
+            <Enabled>false</Enabled>
+            <Sequence>ABC</Sequence>
+          </SequenceLineBreakBefore>
+          <SequenceLineBreakAfter>
+            <Enabled>false</Enabled>
+            <Sequence>\h(00)</Sequence>
+          </SequenceLineBreakAfter>
+          <TimedLineBreak>
+            <Enabled>false</Enabled>
+            <Timeout>500</Timeout>
+          </TimedLineBreak>
+        </TxDisplay>
+        <RxDisplay>
+          <LengthLineBreak>
+            <Enabled>true</Enabled>
+            <Length>16</Length>
+          </LengthLineBreak>
+          <SequenceLineBreakBefore>
+            <Enabled>false</Enabled>
+            <Sequence>ABC</Sequence>
+          </SequenceLineBreakBefore>
+          <SequenceLineBreakAfter>
+            <Enabled>false</Enabled>
+            <Sequence>\h(00)</Sequence>
+          </SequenceLineBreakAfter>
+          <TimedLineBreak>
+            <Enabled>false</Enabled>
+            <Timeout>500</Timeout>
+          </TimedLineBreak>
+        </RxDisplay>
+      </BinaryTerminal>
+    </Terminal>
+    <PredefinedCommand>
+      <Pages>
+        <PageName>Page 1</PageName>
+        <Commands>
+          <IsDefined>true</IsDefined>
+          <Description>All On</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 FF FF 3E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Commands>
+        <Commands>
+          <IsDefined>true</IsDefined>
+          <Description>All Off</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 00 00 3E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Commands>
+        <Commands>
+          <IsDefined>true</IsDefined>
+          <Description>Invert Output</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 FF FF BE)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Commands>
+        <Commands>
+          <IsDefined>true</IsDefined>
+          <Description>Pop Output</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 FF FF 7E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Commands>
+        <Commands>
+          <IsDefined>true</IsDefined>
+          <Description>IOs to Input</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(28 41 00 00 29)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Commands>
+        <Commands>
+          <IsDefined>true</IsDefined>
+          <Description>IOs to Ouput</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(28 41 FF FF 29)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Commands>
+        <Commands>
+          <IsDefined>true</IsDefined>
+          <Description>Inputs Pullup/Active Low</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(28 41 FF FF A9)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Commands>
+        <Commands>
+          <IsDefined>true</IsDefined>
+          <Description>Inputs Active High</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(28 41 00 00 A9)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Commands>
+        <Commands>
+          <IsDefined>true</IsDefined>
+          <Description>Read Output</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 00 00 FE)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Commands>
+        <Commands>
+          <IsDefined>false</IsDefined>
+          <Description />
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines />
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Commands>
+        <Commands>
+          <IsDefined>false</IsDefined>
+          <Description />
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines />
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Commands>
+      </Pages>
+    </PredefinedCommand>
+    <AutoResponse>
+      <Visible>false</Visible>
+      <Trigger>[None]</Trigger>
+      <Response>[None]</Response>
+    </AutoResponse>
+    <Format>
+      <Font>
+        <Name>DejaVu Sans Mono</Name>
+        <Size>8.25</Size>
+        <Style>Regular</Style>
+      </Font>
+      <TxDataFormat>
+        <Color>Blue</Color>
+        <FontStyle>Bold</FontStyle>
+      </TxDataFormat>
+      <TxControlFormat>
+        <Color>Blue</Color>
+        <FontStyle>Regular</FontStyle>
+      </TxControlFormat>
+      <RxDataFormat>
+        <Color>Purple</Color>
+        <FontStyle>Bold</FontStyle>
+      </RxDataFormat>
+      <RxControlFormat>
+        <Color>Purple</Color>
+        <FontStyle>Regular</FontStyle>
+      </RxControlFormat>
+      <DateFormat>
+        <Color>Green</Color>
+        <FontStyle>Regular</FontStyle>
+      </DateFormat>
+      <TimeFormat>
+        <Color>Green</Color>
+        <FontStyle>Regular</FontStyle>
+      </TimeFormat>
+      <PortFormat>
+        <Color>Green</Color>
+        <FontStyle>Regular</FontStyle>
+      </PortFormat>
+      <DirectionFormat>
+        <Color>Green</Color>
+        <FontStyle>Regular</FontStyle>
+      </DirectionFormat>
+      <LengthFormat>
+        <Color>Green</Color>
+        <FontStyle>Regular</FontStyle>
+      </LengthFormat>
+      <WhiteSpacesFormat>
+        <Color>Black</Color>
+        <FontStyle>Regular</FontStyle>
+      </WhiteSpacesFormat>
+      <ErrorFormat>
+        <Color>#FF8000</Color>
+        <FontStyle>Bold</FontStyle>
+      </ErrorFormat>
+      <BackFormat>
+        <Color>window</Color>
+      </BackFormat>
+    </Format>
+    <Log>
+      <RootPath>C:\Users\Owner\Documents</RootPath>
+      <RootFileName>YAT-Log</RootFileName>
+      <RawLogTx>false</RawLogTx>
+      <RawLogBidir>false</RawLogBidir>
+      <RawLogRx>false</RawLogRx>
+      <RawExtension>.dat</RawExtension>
+      <NeatLogTx>false</NeatLogTx>
+      <NeatLogBidir>true</NeatLogBidir>
+      <NeatLogRx>false</NeatLogRx>
+      <NeatExtension>.log</NeatExtension>
+      <NameFormat>false</NameFormat>
+      <NameChannel>false</NameChannel>
+      <NameDate>true</NameDate>
+      <NameTime>true</NameTime>
+      <NameSeparator>-</NameSeparator>
+      <FolderFormat>false</FolderFormat>
+      <FolderChannel>false</FolderChannel>
+      <WriteMode>Create</WriteMode>
+      <TextEncoding>UTF8</TextEncoding>
+    </Log>
+  </Explicit>
+  <Implicit>
+    <SendText>
+      <Command>
+        <IsDefined>true</IsDefined>
+        <Description>Inputs Pullup/Active Low</Description>
+        <DefaultRadix>String</DefaultRadix>
+        <CommandLines>\h(28 43 FF FF A9)</CommandLines>
+        <IsFilePath>false</IsFilePath>
+        <FilePath />
+      </Command>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Inputs Pullup/Active Low</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(28 43 FF FF A9)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-12-09T22:13:08.8507269-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>IOs to Input</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(28 43 00 00 29)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-12-09T22:12:52.3007041-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>All On</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 43 FF FF 3E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-12-09T22:10:26.8505034-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>IOs to Ouput</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(28 43 FF FF 29)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-12-09T22:10:12.1404831-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Inputs Active High</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(28 43 00 00 A9)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-12-09T22:09:21.4704132-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>All Off</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 42 00 00 3E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T23:48:45.7920527-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>All On</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 42 FF FF 3E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T23:48:19.4820164-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>All On</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 FF FF 3E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T23:48:13.5920082-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>IOs to Ouput</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(28 41 FF FF 29)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T23:46:43.7918843-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Inputs Active High</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(28 41 00 00 A9)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T23:46:38.8718775-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Inputs Pullup/Active Low</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(28 41 FF FF A9)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T23:46:35.8018733-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>IOs to Input</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(28 41 00 00 29)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T23:46:06.9218334-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Invert Output</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 FF FF BE)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T23:46:02.3218271-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Pop Output</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 FF FF 7E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T23:46:00.9018251-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Pop Output</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 0F 0F 3E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T23:05:56.4731144-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Pop Output</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 03 03 3E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T21:53:50.8391278-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Pop Output</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 02 02 7E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T20:02:55.4894241-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Pop Output</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 01 01 7E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T20:01:59.4853265-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Pop Output</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 55 55 3E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T15:50:34.5920346-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Pop Output</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 40 40 3E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T15:50:24.3272167-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Pop Output</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 10 10 3E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T15:27:17.4963541-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Pop Output</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 05 05 3E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T15:26:56.3583173-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Pop Output</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 01 01 3E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-28T15:26:41.7878919-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Pop Output</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines>\h(3C 41 10 00 3E)</CommandLines>
+          <IsFilePath>false</IsFilePath>
+          <FilePath />
+        </Item>
+        <TimeStamp>2016-11-26T22:44:52.9934075-06:00</TimeStamp>
+      </RecentCommands>
+    </SendText>
+    <SendFile>
+      <Command>
+        <IsDefined>true</IsDefined>
+        <Description>Marquee.txt</Description>
+        <DefaultRadix>String</DefaultRadix>
+        <CommandLines />
+        <IsFilePath>true</IsFilePath>
+        <FilePath>D:\Documents\General Documents\Electronics\AVR Programming\Sketches\Protean8x2\Serial_Files\Marquee.txt</FilePath>
+      </Command>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Marquee.txt</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines />
+          <IsFilePath>true</IsFilePath>
+          <FilePath>D:\Documents\General Documents\Electronics\AVR Programming\Sketches\Protean8x2\Serial_Files\Marquee.txt</FilePath>
+        </Item>
+        <TimeStamp>2016-11-28T23:45:42.5717998-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Singlel_H-Bridge.txt</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines />
+          <IsFilePath>true</IsFilePath>
+          <FilePath>D:\Documents\General Documents\Electronics\AVR Programming\Sketches\Protean8x2\Serial_Files\Singlel_H-Bridge.txt</FilePath>
+        </Item>
+        <TimeStamp>2016-11-28T23:13:10.7934716-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Dual_H-Bridge.txt</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines />
+          <IsFilePath>true</IsFilePath>
+          <FilePath>D:\Documents\General Documents\Electronics\AVR Programming\Sketches\Protean8x2\Serial_Files\Dual_H-Bridge.txt</FilePath>
+        </Item>
+        <TimeStamp>2016-11-28T22:40:43.7220649-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Quad_H-Bridge.txt</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines />
+          <IsFilePath>true</IsFilePath>
+          <FilePath>D:\Documents\General Documents\Electronics\AVR Programming\Sketches\Protean8x2\Serial_Files\Quad_H-Bridge.txt</FilePath>
+        </Item>
+        <TimeStamp>2016-11-28T18:33:17.4900472-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Flippers.txt</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines />
+          <IsFilePath>true</IsFilePath>
+          <FilePath>D:\Documents\General Documents\Electronics\AVR Programming\Sketches\Protean8x2\Serial_Files\Flippers.txt</FilePath>
+        </Item>
+        <TimeStamp>2016-11-26T23:08:28.6573427-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Valves.txt</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines />
+          <IsFilePath>true</IsFilePath>
+          <FilePath>D:\Documents\General Documents\Electronics\AVR Programming\Sketches\Protean8x2\Serial_Files\Valves.txt</FilePath>
+        </Item>
+        <TimeStamp>2016-11-26T21:21:19.8624704-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Matrix.txt</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines />
+          <IsFilePath>true</IsFilePath>
+          <FilePath>D:\Documents\General Documents\Electronics\AVR Programming\Sketches\Protean8x2\Serial_Files\Matrix.txt</FilePath>
+        </Item>
+        <TimeStamp>2016-11-26T15:28:11.8622425-06:00</TimeStamp>
+      </RecentCommands>
+      <RecentCommands>
+        <Item>
+          <IsDefined>true</IsDefined>
+          <Description>Test_Seq.txt</Description>
+          <DefaultRadix>String</DefaultRadix>
+          <CommandLines />
+          <IsFilePath>true</IsFilePath>
+          <FilePath>D:\Documents\General Documents\Electronics\AVR Programming\Sketches\Protean8x2\Serial_Files\Test_Seq.txt</FilePath>
+        </Item>
+        <TimeStamp>2016-11-17T00:59:59.8052819-06:00</TimeStamp>
+      </RecentCommands>
+    </SendFile>
+    <Predefined>
+      <SelectedPage>1</SelectedPage>
+    </Predefined>
+    <Window>
+      <State>Maximized</State>
+      <Location>
+        <X>0</X>
+        <Y>0</Y>
+      </Location>
+      <Size>
+        <Width>900</Width>
+        <Height>675</Height>
+      </Size>
+    </Window>
+    <Layout>
+      <TxMonitorPanelIsVisible>false</TxMonitorPanelIsVisible>
+      <BidirMonitorPanelIsVisible>true</BidirMonitorPanelIsVisible>
+      <RxMonitorPanelIsVisible>false</RxMonitorPanelIsVisible>
+      <MonitorOrientation>Vertical</MonitorOrientation>
+      <TxMonitorSplitterRatio>0.333333343</TxMonitorSplitterRatio>
+      <RxMonitorSplitterRatio>0.5</RxMonitorSplitterRatio>
+      <PredefinedPanelIsVisible>true</PredefinedPanelIsVisible>
+      <PredefinedSplitterRatio>0.7488226</PredefinedSplitterRatio>
+      <SendTextPanelIsVisible>true</SendTextPanelIsVisible>
+      <SendFilePanelIsVisible>true</SendFilePanelIsVisible>
+    </Layout>
+    <View />
+  </Implicit>
+</Settings>

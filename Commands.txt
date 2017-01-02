@@ -1,0 +1,57 @@
+Data bytes:
+BITS: 15 14 13 12 11 10 09 08   07 06 05 04 03 02 01 00
+PINS: D7 D6 C5 C4 C3 C2 C1 C0   D5 D4 B5 B4 B3 B2 B1 B0
+
+11011111 11000000
+
+
+REALTERM:
+
+0x28 0x41 0x00 0x00 0xA9 - (A..© - All inputs active high.
+0x28 0x41 0xFF 0xFF 0xA9 - (Aÿÿ© - All inputs pullup/active low.
+0x28 0x41 0xFF 0xC0 0x29 - (AÿÀ) - Set IOs.
+0x28 0x41 0xDF 0xC0 0x29 - (AßÀ) - Set IOs. //C5 as input
+
+0x3C 0x41 0xFF 0xFF 0x3E - <Aÿÿ> - All outputs on.
+0x3C 0x41 0xFF 0xFF 0x7E - <Aÿÿ~ - Pop all outputs.
+0x3C 0x41 0xFF 0xFF 0xBE - <Aÿÿ¾ - Invert all outputs.
+0x3C 0x41 0x00 0x00 0x3E - <A..> - All outputs off.
+0x3C 0x41 0x00 0x00 0xFE - <A..þ - Read outputs.
+
+0x3C 0x41 0xCF 0xFF 0x3E - <AÏÿ> - 1st 8 outputs on.
+
+
+YAT:
+
+\h(28 41 00 00 A9) - (A..© - All inputs active high.
+\h(28 41 FF FF A9) - (Aÿÿ© - All inputs pullup/active low.
+\h(28 41 00 00 29) - (A..) - Set IOs to input.
+\h(28 41 FF FF 29) - (Aÿÿ) - Set IOs to output.
+
+\h(3C 41 FF FF 3E) - <Aÿÿ> - All outputs on.
+\h(3C 41 FF FF 7E) - <Aÿÿ~ - Pop all outputs.
+\h(3C 41 FF FF BE) - <Aÿÿ¾ - Invert all outputs.
+\h(3C 41 00 00 3E) - <A..> - All outputs off.
+\h(3C 41 00 00 FE) - <A..þ - Read outputs.
+
+\h(3C 41 01 01 3E) - Forward
+\h(3C 41 02 02 3E) - Backward
+
+
+Protean 710 sequence:
+00000001 00000000 0x01 0x00
+00000010 00000000 0x02 0x00
+00000100 00000000 0x04 0x00
+00001000 00000000 0x08 0x00
+
+00000000 01000000 0x00 0x40 @
+00000000 10000000 0x00 0x80 €
+01000000 00000000 0x40 0x00
+10000000 00000000 0x80 0x00
+00010000 00000000 0x10 0x00
+00100000 00000000 0x20 0x00
+
+20 bytes between consecutive commands:
+
+for (uint8_t i = 0; i < 20; i++)
+	BYTE_DELAY();
