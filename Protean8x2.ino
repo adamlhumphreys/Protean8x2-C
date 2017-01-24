@@ -78,6 +78,7 @@ Byte 4: '}'
 
 /*-- Auxiliary Functions --*/
 #define MATRIX
+//#define SELF_TEST
 
 #ifdef MATRIX
   #include "fonts.h"
@@ -138,6 +139,11 @@ bool              gotData = false;
 //#define ECHO
 #define NEWLINE
 
+#ifdef SELF_TEST
+void SendMessage(char []);
+#endif
+
+
 /*** Functions ***/
 
 inline void serialWrite(uint8_t);
@@ -172,7 +178,104 @@ int main()  /*** Setup ***/
   DDRD |= 1<<1 | 1<<2; // Tx(1) and Tx Enable(2) as Outputs
   PORTD &= ~(1<<2);    // Enable Rx (Disable Tx) [LOW]
   PORTD |= 1<<0;       // Pull Rx(0) Up  **VERY NECESSARY**
-  
+
+
+#ifdef SELF_TEST
+
+  /* Pin Configuration */
+  DDRB &= 0b11000000; //~(1<<0) & ~(1<<1) & ~(1<<2) & ~(1<<3) & ~(1<<4) & ~(1<<5); // Input
+  DDRC &= 0b11000000; //~(1<<0) & ~(1<<1) & ~(1<<2) & ~(1<<3) & ~(1<<4) & ~(1<<5); // Input
+  DDRD &= 0b00001111; //~(1<<4) & ~(1<<5) & ~(1<<6) & ~(1<<7); // Input
+
+  DDRD |= 1<<3;
+  PORTD |= 1<<3; // LED on means good!
+
+  _delay_ms(500);
+/*/
+  SendMessage("Waiting for \"this1\"...\n");
+  sei(); // Enable Interrupts
+  while ( !(gotData && serialData[0] == 't' && serialData[1] == 'h' && serialData[2] == 'i' && serialData[3] == 's' && serialData[4] == '1') )
+  {
+    byteIndex = 0;
+    gotData = false;
+    _delay_ms(100);
+  }
+  cli(); // Disable Interrupts
+//*/
+  /*/if ((PINB & 0b00111111) || (PINC & 0b00111111) || (PIND & 0b11110000)) // Floating could be a problem.
+  {
+    //PORTD &= ~(1<<3); // LED off means bad!
+    SendMessage("We've got power and it shouldn't be here.\n");
+  }//*/
+
+  // Pullup everything.
+  PORTB |= 0b00111111;
+  PORTC |= 0b00111111;
+  PORTD |= 0b11110000;
+  _delay_us(10);
+
+  if ( ( (PINB & 0b00111111) != 0b00111111 ) || ( (PINC & 0b00111111) != 0b00111111 ) || ( (PIND & 0b11110000) != 0b11110000 ) )
+  {
+    PORTD &= ~(1<<3); // LED off means bad!
+    SendMessage("Ground shouldn't be here.\n");
+  }
+
+  for (uint8_t i = 0; i < 6; i++)
+  {
+    PORTB &= ~(1<<i); // Bring low
+    DDRB |= 1<<i;     // Output
+    _delay_us(10);
+    if ( (PINB & 0b00111111) != (0b00111111 & ~(1<<i) ) || ( (PINC & 0b00111111) != 0b00111111 ) || ( (PIND & 0b11110000) != 0b11110000 ) )
+    {
+      PORTD &= ~(1<<3); // LED off means bad!
+      SendMessage("This low (PORTB cycle) shouldn't be here.\n");
+    }
+    DDRB &= ~(1<<i);  // Input
+    PORTB |= 1<<i;    // Pullup
+
+    PORTC &= ~(1<<i); // Bring low
+    DDRC |= 1<<i;     // Output
+    _delay_us(10);
+    if ( (PINC & 0b00111111) != (0b00111111 & ~(1<<i) ) || ( (PINB & 0b00111111) != 0b00111111 ) || ( (PIND & 0b11110000) != 0b11110000 ) )
+    {
+      PORTD &= ~(1<<3); // LED off means bad!
+      SendMessage("This low (PORTC cycle) shouldn't be here.\n");
+    }
+    DDRC &= ~(1<<i);  // Input
+    PORTC |= 1<<i;    // Pullup
+  }
+
+  for (uint8_t i = 4; i < 8; i++)
+  {
+    PORTD &= ~(1<<i); // Bring low
+    DDRD |= 1<<i;     // Output
+    _delay_us(10);
+    if ( (PIND & 0b11110000) != (0b11110000 & ~(1<<i) ) || ( (PINB & 0b00111111) != 0b00111111 ) || ( (PINC & 0b00111111) != 0b00111111 ) )
+    {
+      PORTD &= ~(1<<3); // LED off means bad!
+      SendMessage("This low (PORTD cycle) shouldn't be here.\n");
+    }
+    DDRD &= ~(1<<i);  // Input
+    PORTD |= 1<<i;    // Pullup
+  }
+
+  if (PIND & 1<<3) // If LED is stil on.
+  {
+    SendMessage("All seems well!\n");
+    for (uint8_t i = 0; i < 3; i++)
+    {
+      PORTD &= ~(1<<3);
+      _delay_ms(500);
+      PORTD |= 1<<3;
+      _delay_ms(500);
+    }
+  }
+  else
+    SendMessage("Oh well.\n");
+
+#else // (no) SELF_TEST
+
+
   /* Pin Configuration */
   DDRB |= 1<<0 | 1<<1 | 1<<2 | 1<<3 | 1<<4 | 1<<5; // Output
   DDRC |= 1<<0 | 1<<1 | 1<<2 | 1<<3 | 1<<4 | 1<<5; // Output
@@ -444,6 +547,7 @@ while (1)  /*** Loop ***/
     haveSetOutBits = hadSetOutBits;
   }
 }
+#endif // SELF_TEST
 return 0;
 }
 
@@ -482,6 +586,25 @@ inline void finishTx()
   //delayMicroseconds(200); // Let Tx truly finish. Necessary for small error rates at 115.2k baud, etc.
   PORTD &= ~(1<<2); // Enable Rx
 }
+
+#ifdef SELF_TEST
+void SendMessage(char str[])
+{
+  /** Begin Transmission **/
+  PORTD |= 1<<2; // Enable Tx
+
+  for (uint8_t i = 0; str[i] != '\n' && str[i] != 0; i++)
+  {
+    serialWrite(str[i]);
+  }
+#ifdef NEWLINE
+  serialWrite(10);
+#endif
+
+  /** Finish Transmission **/
+  finishTx();
+}
+#endif
 
 void Port1(bool IO, uint8_t data)
 {
